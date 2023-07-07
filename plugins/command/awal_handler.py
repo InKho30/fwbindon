@@ -1,6 +1,4 @@
 import config
-from PIL import Image, ImageFont, ImageDraw
-from io import BytesIO
 
 from pyrogram import Client, types, enums
 from plugins import Helper, Database
@@ -13,20 +11,20 @@ async def start_handler(client: Client, msg: types.Message):
     username = (
         f'@{msg.from_user.username}'
         if msg.from_user.username
-        else '@OwnNeko'
+        else '@chatjomblohalu_bot'
     )
     mention = msg.from_user.mention
     await msg.reply_text(
-        text=config.start_msg.format(
-            id=msg.from_user.id,
-            mention=mention,
-            username=username,
-            first_name=await helper.escapeHTML(first),
-            last_name=await helper.escapeHTML(last),
-            fullname=await helper.escapeHTML(fullname),
-        ),
-        disable_web_page_preview=True,
-        quote=True
+        text = config.start_msg.format(
+            id = msg.from_user.id,
+            mention = mention,
+            username = username,
+            first_name = await helper.escapeHTML(first),
+            last_name = await helper.escapeHTML(last),
+            fullname = await helper.escapeHTML(fullname),
+            ),
+        disable_web_page_preview = True,
+        quote = True
     )
 
 async def status_handler(client: Client, msg: types.Message):
@@ -41,17 +39,8 @@ async def status_handler(client: Client, msg: types.Message):
     pesan += f'├Menfess : {db.menfess}/{config.batas_kirim}\n'
     pesan += f'├Semua Menfess : {db.all_menfess}\n'
     pesan += f'└Bergabung : {db.sign_up}'
-    # Load the image
-    image = Image.open('20230508_142127.jpg')  # Replace with the actual image path
+    await msg.reply(pesan, True, enums.ParseMode.HTML)
 
-    # Create a BytesIO stream to save the image
-    image_stream = BytesIO()
-    image.save(image_stream, format='JPEG')
-    image_stream.seek(0)
-
-    # Reply with the photo and description
-    await msg.reply_photo(photo=image_stream, caption=pesan, parse_mode=enums.ParseMode.HTML)
-    
 async def statistik_handler(client: Helper, id_bot: int):
     db = Database(client.user_id)
     bot = db.get_data_bot(id_bot)
@@ -104,16 +93,16 @@ async def gagal_kirim_handler(client: Client, msg: types.Message):
     username = (
         f'@{msg.from_user.username}'
         if msg.from_user.username
-        else '@OwnNeko'
+        else '@chatjomblohalu_bot'
     )
     mention = msg.from_user.mention
     return await msg.reply(config.gagalkirim_msg.format(
-        id=msg.from_user.id,
-        mention=mention,
-        username=username,
-        first_name=await anu.escapeHTML(first_name),
-        last_name=await anu.escapeHTML(last_name),
-        fullname=await anu.escapeHTML(fullname)
+        id = msg.from_user.id,
+        mention = mention,
+        username = username,
+        first_name = await anu.escapeHTML(first_name),
+        last_name = await anu.escapeHTML(last_name),
+        fullname = await anu.escapeHTML(fullname)
     ), True, enums.ParseMode.HTML, disable_web_page_preview=True)
 
 async def help_handler(client, msg):
@@ -154,30 +143,4 @@ async def help_handler(client, msg):
         pesan += '\n=====BANNED COMMAND=====\n'
         pesan += '/ban — ban user\n'
         pesan += '/unban — unban user\n'
-    await msg.reply_text(pesan, True)
-
-async def reply_with_image_text(client: Client, msg: types.Message, text: str, image_path: str):
-    helper = Helper(client, msg)
-    first = msg.from_user.first_name
-    last = msg.from_user.last_name
-    fullname = f'{first} {last}' if last else first
-    username = (
-        f'@{msg.from_user.username}'
-        if msg.from_user.username
-        else '@OwnNeko'
-    )
-    mention = msg.from_user.mention
-    with Image.open(image_path) as image:
-        await msg.reply_photo(
-            photo=image,
-            caption=config.start_msg.format(
-                id=msg.from_user.id,
-                mention=mention,
-                username=username,
-                first_name=await helper.escapeHTML(first),
-                last_name=await helper.escapeHTML(last),
-                fullname=await helper.escapeHTML(fullname),
-            ),
-            disable_web_page_preview=True,
-            quote=True
-        )
+    await msg.reply(pesan, True)
