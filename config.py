@@ -48,6 +48,7 @@ pic_moansboy = os.environ.get("PIC_MOANSBOY" , "https://telegra.ph/file/90359cf4
 pic_gfrent = os.environ.get("PIC_GFRENT" , "https://telegra.ph/file/432e8cb26179ade6eba70.jpg")
 pic_bfrent = os.environ.get("PIC_BFRENT" , "https://telegra.ph/file/e0dc732430d9b1b0cbfa1.jpg")
 pic_owner = os.environ.get("PIC_OWNER" , "https://telegra.ph/file/197089300f64d33a3535e.jpg")
+pic_ownergirl = os.environ.get("PIC_OWNERGIRL" , "https://telegra.ph/file/bdb7a2c65d9e1272af639.jpg")
 pic_neko = os.environ.get("PIC_NEKO" , "https://telegra.ph/file/2d46007dd7d22645c4ec3.jpg")
 pic_admingirl = os.environ.get("PIC_ADMINGIRL" , "https://telegra.ph/file/30c7b36f68d69840a762c.jpg")
 pic_adminboy = os.environ.get("PIC_ADMINBOY" , "https://telegra.ph/file/192be803ec6722b3935ab.jpg")
