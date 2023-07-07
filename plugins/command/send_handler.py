@@ -34,7 +34,8 @@ async def send_with_pic_handler(client: Client, msg: types.Message, key: str, ha
         if user.status == 'owner':
             if key == hastag[0]:
                 picture = config.pic_girl
-          elif key == hastag[1]:
+        elif user.status == 'owner':
+          if key == hastag[1]:
                 picture = config.pic_owner
             
 
