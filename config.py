@@ -2,17 +2,17 @@ import os
 
 api_id = int(os.environ.get("API_ID", "24465982"))
 api_hash = os.environ.get("API_HASH", "2b3131b7d3f6a42bd4ae1ba3b58c11c4")
-bot_token = os.environ.get("BOT_TOKEN", "5974054493:AAGNaK3vuyRtBfXloDXKO1ZpJ8YCTAjBnjk")
+bot_token = os.environ.get("BOT_TOKEN", "6174363799:AAFZaR-eJ0NYdBInhKpIVXO8TK4QAjJMQqA")
 # =========================================================== #
 
 db_url = os.environ.get("DB_URL", "mongodb+srv://badhuman:<password>@fwbbase69.j0dbqvp.mongodb.net/?retryWrites=true&w=majority")
 db_name = os.environ.get("DB_NAME", "menfess")
 # =========================================================== #
 
-channel_1 = int(os.environ.get("CHANNEL_1", "-1001884106616"))
-channel_2 = int(os.environ.get("CHANNEL_2", "-1001973439933"))
+channel_1 = int(os.environ.get("CHANNEL_1", "-1001582407990"))
+channel_2 = int(os.environ.get("CHANNEL_2", "-1001821361879"))
 channel_3 = int(os.environ.get("CHANNEL_3", "-1001884106616"))
-channel_log = int(os.environ.get("CHANNEL_LOG", "-1001941178911"))
+channel_log = int(os.environ.get("CHANNEL_LOG", "-1001984291862"))
 # =========================================================== #
 
 id_admin = int(os.environ.get("ID_ADMIN", "5633222043"))
@@ -36,7 +36,7 @@ biaya_gfrent = int(os.environ.get("BIAYA_GFRENT", "40"))
 biaya_bfrent = int(os.environ.get("BIAYA_BFRENT", "30"))
 # =========================================================== #
 
-hastag = os.environ.get("HASTAG", "#NekoGirl #NekoBoy #NekoAsk #NekoFind #NekoSpill #NekoStory #NekoTalent").replace(" ", "|").lower()
+hastag = os.environ.get("HASTAG", "#FwbGirl #FwbBoy #FwbAsk #FwbFind #FwbSpill #FwbStory #FwbTalent").replace(" ", "|").lower()
 # =========================================================== #
 
 pic_boy = os.environ.get("PIC_BOY", "https://telegra.ph/file/be7557797c055f7aaefda.jpg")
@@ -60,20 +60,20 @@ pesan_join = os.environ.get("PESAN_JOIN", "Tidak dapat diakses harap join terleb
 start_msg = os.environ.get("START_MSG", """"
 {mention},Silahkan gunakan hastag:
 
-#NekoBoy / #NekoGirl untuk Mencari Pasangan,Teman , Partner dll
-#NekoAsk untuk Bertanya
-#NekoStory untuk Berbagi Cerita
-#NekoSpill untuk Spill Masalah
-#NekoFind untuk Mencari Pasangan, Teman, Partner dll
+#FwbBoy / #FwbGirl untuk Mencari Pasangan,Teman , Partner dll
+#FwbAsk untuk Bertanya
+#FwbStory untuk Berbagi Cerita
+#FwbSpill untuk Spill Masalah
+#FwbFind untuk Mencari Pasangan, Teman, Partner dll
 
 {fullname} 🌱\n\nIni adalah bot menfess, semua pesan yang kamu kirim akan masuk ke channel secara anonymous. ketik /help""")
 
 gagalkirim_msg = os.environ.get("GAGAL_KIRIM", """
 {mention}, pesan mu gagal terkirim silahkan gunakan hastag:
 
-#NekoBoy / #NekoGirl untuk Mencari Pasangan, Teman , Partner dll
-#NekoAsk untuk Bertanya
-#NekoStory untuk Berbagi Cerita
-#NekoSpill untuk Spill Masalah
-#NekoFind untuk Mencari Pasangan, Teman, Partner dll
+#FwbBoy / #FwbGirl untuk Mencari Pasangan, Teman , Partner dll
+#FwbAsk untuk Bertanya
+#FwbStory untuk Berbagi Cerita
+#FwbSpill untuk Spill Masalah
+#FwbFind untuk Mencari Pasangan, Teman, Partner dll
 """)
