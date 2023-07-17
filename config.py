@@ -27,13 +27,13 @@ batas_gfrent = int(os.environ.get("BATAS_GFRENT", "10"))
 batas_bfrent = int(os.environ.get("BATAS_BFRENT", "10"))
 # =========================================================== #
 
-biaya_kirim = int(os.environ.get("BIAYA_KIRIM", "10"))
-biaya_talent = int(os.environ.get("BIAYA_TALENT", "80"))
-biaya_daddy_sugar = int(os.environ.get("BIAYA_DADDY_SUGAR", "70"))
-biaya_moansgirl = int(os.environ.get("BIAYA_MOANSGIRL", "60"))
-biaya_moansboy = int(os.environ.get("BIAYA_MOANSBOY", "50"))
-biaya_gfrent = int(os.environ.get("BIAYA_GFRENT", "40"))
-biaya_bfrent = int(os.environ.get("BIAYA_BFRENT", "30"))
+biaya_kirim = int(os.environ.get("BIAYA_KIRIM", "25"))
+biaya_talent = int(os.environ.get("BIAYA_TALENT", "25"))
+biaya_daddy_sugar = int(os.environ.get("BIAYA_DADDY_SUGAR", "25"))
+biaya_moansgirl = int(os.environ.get("BIAYA_MOANSGIRL", "25"))
+biaya_moansboy = int(os.environ.get("BIAYA_MOANSBOY", "25"))
+biaya_gfrent = int(os.environ.get("BIAYA_GFRENT", "25"))
+biaya_bfrent = int(os.environ.get("BIAYA_BFRENT", "25"))
 # =========================================================== #
 
 hastag = os.environ.get("HASTAG", "#FwbGirl #FwbBoy #FwbAsk #FwbFind #FwbSpill #FwbStory #FwbTalent").replace(" ", "|").lower()
