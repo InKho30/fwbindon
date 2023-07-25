@@ -9,10 +9,10 @@ db_url = os.environ.get("DB_URL", "mongodb+srv://cicimail:<password>@cluster0.ed
 db_name = os.environ.get("DB_NAME", "menfess")
 # =========================================================== #
 
-channel_1 = int(os.environ.get("CHANNEL_1", "-1001582407990"))
-channel_2 = int(os.environ.get("CHANNEL_2", "-1001821361879"))
+channel_1 = int(os.environ.get("CHANNEL_1", "-1001803534224"))
+channel_2 = int(os.environ.get("CHANNEL_2", "-1001667852253"))
 channel_3 = int(os.environ.get("CHANNEL_3", "-1001884106616"))
-channel_log = int(os.environ.get("CHANNEL_LOG", "-1001984291862"))
+channel_log = int(os.environ.get("CHANNEL_LOG", "-1001861428348"))
 # =========================================================== #
 
 id_admin = int(os.environ.get("ID_ADMIN", "1837660746"))
