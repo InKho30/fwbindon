@@ -1,10 +1,11 @@
 import config
 import re
 
-from pyrogram import Client, types, enums
+from pyrogram import Client, types, enums, File
 from plugins import Database, Helper
 
         
+
 
 async def send_with_pic_handler(client: Client, msg: types.Message, key: str, hastag: list):
     db = Database(msg.from_user.id)
@@ -27,16 +28,43 @@ async def send_with_pic_handler(client: Client, msg: types.Message, key: str, ha
             picture = config.pic_girl
         elif key == hastag[1]:
             picture = config.pic_boy
-            
+
         if user.status == 'talent':
             picture = config.pic_talentgirl
 
         if user.status == 'owner':
-           if key == hastag[0]:
-            picture = config.pic_ownergirl
-           elif key == hastag[1]:
-            picture = config.pic_owner
-            
+            if key == hastag[0]:
+                picture = config.pic_ownergirl
+            elif key == hastag[1]:
+                picture = config.pic_owner
+
+        link = await get_link()
+        caption = msg.text or msg.caption
+        entities = msg.entities or msg.caption_entities
+
+        kirim = await client.send_photo(config.channel_1, picture, caption, caption_entities=entities)
+
+        # Hapus foto yang dikirim oleh bot
+        if kirim.photo:
+            media_message = kirim.photo[-1]
+        elif kirim.document and kirim.document.mime_type.startswith("image/"):
+            media_message = kirim.document
+        else:
+            media_message = None
+
+        if media_message:
+            file_id = media_message.file_id
+            await client.delete_messages(config.channel_2, file_id)
+
+        await helper.send_to_channel_log(type="log_channel", link=link + str(kirim.message_id))
+        await db.update_menfess(coin, menfess, all_menfess)
+        await msg.reply(f"pesan telah berhasil terkirim. hari ini kamu telah mengirim menfess sebanyak {menfess + 1}/{config.batas_kirim} . kamu dapat mengirim menfess sebanyak {config.batas_kirim} kali dalam sehari\n\nwaktu reset setiap jam 1 pagi\n<a href='{link + str(kirim.message_id)}'>check pesan kamu</a>. \n\n\n\n Info: Topup Coin Hanya ke @cs4dminbot")
+    else:
+        await msg.reply('media yang didukung photo, video dan voice')
+
+
+ 
+
 
 
 
