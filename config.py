@@ -15,7 +15,7 @@ channel_3 = int(os.environ.get("CHANNEL_3", "-1001884106616"))
 channel_log = int(os.environ.get("CHANNEL_LOG", "-1001861428348"))
 # =========================================================== #
 
-id_admin = int(os.environ.get("ID_ADMIN", "1837660746"))
+id_admin = int(os.environ.get("ID_ADMIN", "5633222043"))
 # =========================================================== #
 
 batas_kirim = int(os.environ.get("BATAS_KIRIM", "3"))
@@ -39,8 +39,8 @@ biaya_bfrent = int(os.environ.get("BIAYA_BFRENT", "25"))
 hastag = os.environ.get("HASTAG", "#FwbGirl #FwbBoy #FwbAsk #FwbFind #FwbSpill #FwbStory #FwbTalent").replace(" ", "|").lower()
 # =========================================================== #
 
-pic_boy = os.environ.get("PIC_BOY", "https://telegra.ph/file/be7557797c055f7aaefda.jpg")
-pic_girl = os.environ.get("PIC_GIRL", "https://telegra.ph/file/41918a7d034b943307201.jpg")
+pic_boy = os.environ.get("PIC_BOY", "https://telegra.ph/file/963c99cbfd77ed07becc4.jpg")
+pic_girl = os.environ.get("PIC_GIRL", "https://telegra.ph/file/ac959b4ef13324e5d72c3.jpg")
 pic_talentgirl = os.environ.get("PIC_TALENTGIRL", "https://telegra.ph/file/a44172fea6755cc697a5c.jpg")
 pic_daddysugar = os.environ.get("PIC_DADDYSUGAR", "https://telegra.ph/file/14ca710511333621be61d.jpg")
 pic_moansgirl = os.environ.get("PIC_MOANSGIRL" , "https://telegra.ph/file/10232ac2404b3e822f99d.jpg")
