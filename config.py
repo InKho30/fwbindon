@@ -2,7 +2,7 @@ import os
 
 api_id = int(os.environ.get("API_ID", "24465982"))
 api_hash = os.environ.get("API_HASH", "2b3131b7d3f6a42bd4ae1ba3b58c11c4")
-bot_token = os.environ.get("BOT_TOKEN", "6174363799:AAFZaR-eJ0NYdBInhKpIVXO8TK4QAjJMQqA")
+bot_token = os.environ.get("BOT_TOKEN", "6221422398:AAHbY39mowUMF48kU6wkO3GLUt8F1aJ7CSQ")
 # =========================================================== #
 
 db_url = os.environ.get("DB_URL", "mongodb+srv://cicimail:<password>@cluster0.edaepoo.mongodb.net/?retryWrites=true&w=majority")
