@@ -13,7 +13,7 @@ async def start_handler(client: Client, msg: types.Message):
     username = (
         f'@{msg.from_user.username}'
         if msg.from_user.username
-        else '@chatjomblohalu_bot'
+        else '@nekomenfess'
     )
     mention = msg.from_user.mention
     await msg.reply_text(
