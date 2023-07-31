@@ -1,10 +1,18 @@
 import re
+import config  # Import config module for notification settings
 
 from pyrogram import Client, enums, types
 from pyrogram.types import (
     Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 )
 from plugins import Database
+
+async def send_notification(client, text):
+    # Function to send notification to config.channel_1
+    try:
+        await client.send_message(config.channel_1, text)
+    except Exception as e:
+        print("Error sending notification:", str(e))
 
 async def bot_handler(client: Client, msg: Message):
     if re.search(r"^[\/]bot(\s|\n)*$", msg.text):
@@ -22,6 +30,7 @@ async def bot_handler(client: Client, msg: Message):
                 parse_mode=enums.ParseMode.HTML
             )
         await my_db.bot_handler(status)
+        await send_notification(client, "🔔 Bot telah diaktifkan.")
         return await msg.reply(
             text='Saat ini status bot telah <b>AKTIF</b> ✅', quote=True,
             parse_mode=enums.ParseMode.HTML
@@ -33,11 +42,11 @@ async def bot_handler(client: Client, msg: Message):
                 parse_mode=enums.ParseMode.HTML
             )
         await my_db.bot_handler(status)
+        await send_notification(client, "🔔 Bot telah dinonaktifkan.")
         return await msg.reply(
             text='Saat ini status bot telah <b>TIDAK AKTIF</b> ❌', quote=True,
             parse_mode=enums.ParseMode.HTML
         )
-
 
 async def setting_handler(client: Client, msg:types.Message):
     db = Database(msg.from_user.id).get_data_bot(client.id_bot)
