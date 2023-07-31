@@ -39,8 +39,8 @@ biaya_bfrent = int(os.environ.get("BIAYA_BFRENT", "25"))
 hastag = os.environ.get("HASTAG", "#FwbGirl #FwbBoy #FwbAsk #FwbFind #FwbSpill #FwbStory #FwbTalent").replace(" ", "|").lower()
 # =========================================================== #
 
-pic_boy = os.environ.get("PIC_BOY", "https://telegra.ph/file/963c99cbfd77ed07becc4.jpg")
-pic_girl = os.environ.get("PIC_GIRL", "https://telegra.ph/file/ac959b4ef13324e5d72c3.jpg")
+pic_boy = os.environ.get("PIC_BOY", "https://telegra.ph/file/7919d0a66973b3b94f448.jpg")
+pic_girl = os.environ.get("PIC_GIRL", "https://telegra.ph/file/5d023cac38ab1893a8aac.jpg")
 pic_talentgirl = os.environ.get("PIC_TALENTGIRL", "https://telegra.ph/file/a44172fea6755cc697a5c.jpg")
 pic_daddysugar = os.environ.get("PIC_DADDYSUGAR", "https://telegra.ph/file/14ca710511333621be61d.jpg")
 pic_moansgirl = os.environ.get("PIC_MOANSGIRL" , "https://telegra.ph/file/10232ac2404b3e822f99d.jpg")
