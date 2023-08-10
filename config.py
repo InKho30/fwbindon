@@ -19,12 +19,12 @@ id_admin = int(os.environ.get("ID_ADMIN", "6224799690"))
 # =========================================================== #
 
 batas_kirim = int(os.environ.get("BATAS_KIRIM", "3"))
-batas_talent = int(os.environ.get("BATAS_TALENT", "10"))
-batas_daddy_sugar = int(os.environ.get("BATAS_DADDY_SUGAR", "10"))
-batas_moansgirl = int(os.environ.get("BATAS_MOANSGIRL", "10"))
-batas_moansboy = int(os.environ.get("BATAS_MOANSBOY", "10"))
-batas_gfrent = int(os.environ.get("BATAS_GFRENT", "10"))
-batas_bfrent = int(os.environ.get("BATAS_BFRENT", "10"))
+batas_talent = int(os.environ.get("BATAS_TALENT", "3"))
+batas_daddy_sugar = int(os.environ.get("BATAS_DADDY_SUGAR", "3"))
+batas_moansgirl = int(os.environ.get("BATAS_MOANSGIRL", "3"))
+batas_moansboy = int(os.environ.get("BATAS_MOANSBOY", "3"))
+batas_gfrent = int(os.environ.get("BATAS_GFRENT", "3"))
+batas_bfrent = int(os.environ.get("BATAS_BFRENT", "3"))
 # =========================================================== #
 
 biaya_kirim = int(os.environ.get("BIAYA_KIRIM", "25"))
