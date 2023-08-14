@@ -4,12 +4,15 @@ import re
 from pyrogram import Client, types, enums
 from plugins import Database, Helper
 
-        
-
 async def send_with_pic_handler(client: Client, msg: types.Message, key: str, hastag: list):
     db = Database(msg.from_user.id)
     helper = Helper(client, msg)
     user = db.get_data_pelanggan()
+    
+    # Pemeriksaan URL
+    if re.search(r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", msg.text or ""):
+        return await msg.reply("Tidak diizinkan mengirimkan tautan.")
+    
     if msg.text or msg.photo or msg.video or msg.voice:
         menfess = user.menfess
         all_menfess = user.all_menfess
@@ -27,25 +30,29 @@ async def send_with_pic_handler(client: Client, msg: types.Message, key: str, ha
             picture = config.pic_girl
         elif key == hastag[1]:
             picture = config.pic_boy
-            
+
         if user.status == 'talent':
             picture = config.pic_talentgirl
-
         if user.status == 'owner':
-           if key == hastag[0]:
-            picture = config.pic_ownergirl
-           elif key == hastag[1]:
             picture = config.pic_owner
-            
-
-
-
-
-            
+        if user.status == 'admin':
+            if key == hastag[0]:
+                picture = config.pic_admingirl
+            elif key == hastag[1]:
+                picture = config.pic_adminboy
+        if user.status == 'daddy sugar':
+            picture = config.pic_daddysugar
+        if user.status == 'boyfriend rent':
+            picture = config.pic_bfrent
+        elif user.status == 'moans boy':
+            picture = config.pic_moansboy
 
         link = await get_link()
         caption = msg.text or msg.caption
         entities = msg.entities or msg.caption_entities
+
+        # Remove URLs from caption
+        caption = re.sub(r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", "", caption)
 
         kirim = await client.send_photo(config.channel_1, picture, caption, caption_entities=entities)
         await helper.send_to_channel_log(type="log_channel", link=link + str(kirim.id))
@@ -160,8 +167,7 @@ async def transfer_coin_handler(client: Client, msg: types.Message):
             if db_user.status in ['member', 'talent']:
                 return await msg.reply('Tidak bisa mengirim video, karena sedang dinonaktifkan oleh admin', True)
         elif msg.voice and not db_bot.voice:
-            if db_user.status in ['member', 'talent']:
-                return await msg.reply('Tidak bisa mengirim voice, karena sedang dinonaktifkan oleh admin', True)
+            return await msg.reply('Tidak bisa mengirim voice, karena sedang dinonaktifkan oleh admin', True)
 
         menfess = db_user.menfess
         all_menfess = db_user.all_menfess
