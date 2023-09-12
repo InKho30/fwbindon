@@ -8,6 +8,11 @@ async def send_with_pic_handler(client: Client, msg: types.Message, key: str, ha
     db = Database(msg.from_user.id)
     helper = Helper(client, msg)
     user = db.get_data_pelanggan()
+
+    # Pengecekan apakah pesan mengandung username pengguna saat ini
+    if f"@{msg.from_user.username}" not in msg.text:
+        return await msg.reply('Anda hanya dapat mengirim menfess dengan menggunakan username Anda sendiri.', quote=True)
+    
     
     # Pemeriksaan URL
     if re.search(r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", msg.text or ""):
@@ -73,6 +78,11 @@ async def send_menfess_handler(client: Client, msg: types.Message):
         menfess = db_user.menfess
         all_menfess = db_user.all_menfess
         coin = db_user.coin
+
+            # Pengecekan apakah pesan mengandung username pengguna saat ini
+    if f"@{msg.from_user.username}" not in msg.text:
+        return await msg.reply('Anda hanya dapat mengirim menfess dengan menggunakan username Anda sendiri.', quote=True)
+    
         if menfess >= config.batas_kirim and db_user.status in [
             'member',
             'talent',
